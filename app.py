@@ -110,6 +110,21 @@ try:
         ax=-30,
         ay=-30
     )
+    # Add safe discharge zone
+    fig1.add_hrect(
+        y0=0, y1=5000,
+        fillcolor="lightgreen", opacity=0.2,
+        layer="below", line_width=0
+    )
+    fig1.add_annotation(
+        x=0,
+        y=2500,
+        text="Safe discharge zone",
+        showarrow=False,
+        font=dict(size=12),
+        textangle=0
+    )
+
     fig1.update_layout(
         xaxis_title=f"Time (hours) elapsed since first workout (t=0 at {workout1_start.strftime('%I:%M%p %m/%d/%y')})",
         yaxis_title="CK Value (U/L)",
@@ -194,6 +209,21 @@ try:
         ay=-30
     )
     
+
+    # Add safe discharge zone
+    fig2.add_hrect(
+        y0=0, y1=5000,
+        fillcolor="lightgreen", opacity=0.2,
+        layer="below", line_width=0
+    )
+    fig2.add_annotation(
+        x=0,
+        y=2500,
+        text="Safe discharge zone",
+        showarrow=False,
+        font=dict(size=12),
+        textangle=0
+    )
 
     fig2.update_layout(
         xaxis_title=f"Time (hours) elapsed since second workout (t=0 at {workout2_start.strftime('%I:%M%p %m/%d/%y')})",
