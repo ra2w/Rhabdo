@@ -35,8 +35,10 @@ try:
                 
     Source: https://www.uptodate.com/contents/rhabdomyolysis-clinical-manifestations-and-diagnosis
     """)
+
+    st.divider()
     # Create plots for both workouts
-    st.write(f'### CK levels post Workout 1 (Pull-up/Arm workout on {workout1_start.strftime("%m/%d/%y")})')
+    st.subheader(f'CK levels post Workout 1')
     df['Hours_Elapsed_Workout1'] = ((df['Date/Time'] - workout1_start).dt.total_seconds() / 3600).round(1)
     
     # Add t=0 point for first workout
@@ -51,7 +53,7 @@ try:
     
     # Create figure with two traces
     fig1 = px.line(df_interp1, x='Hours_Elapsed_Workout1', y='Value (U/L)', 
-                   title='CK Values After Pull-up/Arm Workout',
+                   title=f'CK levels post Pull-up/Arm workout on {workout1_start.strftime("%m/%d/%y")}',
                    template='plotly',
                    labels={'Hours_Elapsed_Workout1': 'Time elapsed since first workout', 'Value (U/L)': 'CK Value'})
     
@@ -139,8 +141,8 @@ try:
         )
     )
     st.plotly_chart(fig1)
-
-    st.write('### CK levels post Workout 2 (Quad + HIIT workout on {workout2_start.strftime("%m/%d/%y")})')
+    st.divider()
+    st.subheader(f'CK levels post Workout 2')
     df['Hours_Elapsed_Workout2'] = ((df['Date/Time'] - workout2_start).dt.total_seconds() / 3600).round(1)
     
     # Add t=0 point for second workout
@@ -155,7 +157,7 @@ try:
     
     # Create figure with two traces
     fig2 = px.line(df_interp2, x='Hours_Elapsed_Workout2', y='Value (U/L)', 
-                   title='CK Values After Quad + HIIT Workout',
+                   title=f'CK levels post Quad + HIIT workout on {workout2_start.strftime("%m/%d/%y")}',
                    template='plotly',
                    labels={'Hours_Elapsed_Workout2': 'Time elapsed since second workout', 'Value (U/L)': 'CK Value'})
     
