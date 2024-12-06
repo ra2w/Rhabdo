@@ -49,19 +49,6 @@ try:
     df_interp1 = pd.concat([zero_point1, df.iloc[0:1]], ignore_index=True).sort_values('Hours_Elapsed_Workout1')
     df_real1 = df.copy()
     
-    # Add annotation for first CK test
-    first_test_value = df.iloc[0]['Value (U/L)']
-    first_test_time = df.iloc[0]['Hours_Elapsed_Workout1']
-    fig1.add_annotation(
-        x=first_test_time,
-        y=first_test_value,
-        text="First CK Test",
-        showarrow=True,
-        arrowhead=1,
-        ax=-40,
-        ay=-40
-    )
-    
     # Create figure with two traces
     fig1 = px.line(df_interp1, x='Hours_Elapsed_Workout1', y='Value (U/L)', 
                    title='CK Values After Pull-up/Arm Workout',
@@ -97,6 +84,19 @@ try:
                        y=max(df['Value (U/L)'])*0.3,
                        text="Workout 2", showarrow=True,
                        arrowhead=1, ax=-40)
+    
+    # Add first CK test annotation
+    first_test_value = df.iloc[0]['Value (U/L)']
+    first_test_time = df.iloc[0]['Hours_Elapsed_Workout1']
+    fig1.add_annotation(
+        x=first_test_time,
+        y=first_test_value,
+        text="First CK Test",
+        showarrow=True,
+        arrowhead=1,
+        ax=-40,
+        ay=-40
+    )
     
     # Add vertical line at peak
     fig1.add_vline(x=peak_time1, line_dash="dash", line_color="gray")
