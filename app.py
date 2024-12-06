@@ -82,9 +82,17 @@ try:
         yshift=10
     )
     
+    # Add shaded normal range
+    fig1.add_hrect(y0=30, y1=145, 
+                   line_width=0, 
+                   fillcolor="gray", 
+                   opacity=0.2,
+                   annotation_text="Normal Range",
+                   annotation=dict(font_size=10))
+
     fig1.update_layout(
         xaxis_title=f"Time elapsed since first workout (t=0 at {workout1_start.strftime('%I:%M%p %m/%d/%y')})",
-        yaxis_title="CK Value",
+        yaxis_title="CK Value (U/L)",
         hovermode='x unified',
         xaxis=dict(
             dtick=12,  # Set tick interval to 12 hours
@@ -139,9 +147,17 @@ try:
         yshift=10
     )
     
+    # Add shaded normal range
+    fig2.add_hrect(y0=30, y1=145, 
+                   line_width=0, 
+                   fillcolor="gray", 
+                   opacity=0.2,
+                   annotation_text="Normal Range",
+                   annotation=dict(font_size=10))
+
     fig2.update_layout(
         xaxis_title=f"Time elapsed since second workout (t=0 at {workout2_start.strftime('%I:%M%p %m/%d/%y')})",
-        yaxis_title="CK Value",
+        yaxis_title="CK Value (U/L)",
         hovermode='x unified',
         xaxis=dict(
             dtick=12,  # Set tick interval to 12 hours
