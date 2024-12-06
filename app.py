@@ -79,11 +79,11 @@ try:
     # Add workout labels
     fig1.add_annotation(x=0, y=max(df['Value (U/L)'])*0.2,
                        text="Workout 1", showarrow=True,
-                       arrowhead=1, ax=-60, ay=-40)
+                       arrowhead=1, ax=-30, ay=-40)
     fig1.add_annotation(x=(workout2_start - workout1_start).total_seconds()/3600,
                        y=max(df['Value (U/L)'])*0.3,
                        text="Workout 2", showarrow=True,
-                       arrowhead=1, ax=-60, ay=-40)
+                       arrowhead=1, ax=-30, ay=-40)
     
     # Add first CK test annotation
     first_test_value = df.iloc[0]['Value (U/L)']
@@ -94,7 +94,7 @@ try:
         text="First CK Test",
         showarrow=True,
         arrowhead=1,
-        ax=-60,
+        ax=-10,
         ay=-60
     )
     
@@ -106,7 +106,9 @@ try:
         text=f"Peak: {peak_value1:.0f} U/L @{peak_time1:.1f}h",
         showarrow=True,
         arrowhead=1,
-        yshift=10
+        yshift=10,
+        ax=-30,
+        ay=-30
     )
     fig1.update_layout(
         xaxis_title=f"Time (hours) elapsed since first workout (t=0 at {workout1_start.strftime('%I:%M%p %m/%d/%y')})",
@@ -160,7 +162,7 @@ try:
     # Add workout label
     fig2.add_annotation(x=0, y=max(df['Value (U/L)'])*0.2,
                        text="Workout 2", showarrow=True,
-                       arrowhead=1, ax=-60, ay=-40)
+                       arrowhead=1, ax=-30, ay=-40)
     
     # Add first CK test annotation
     first_test_value = df.iloc[0]['Value (U/L)']
@@ -171,8 +173,8 @@ try:
         text="First CK Test",
         showarrow=True,
         arrowhead=1,
-        ax=-60,
-        ay=-60
+        ax=-15,
+        ay=-50
     )
     
     # Add vertical line at peak
@@ -183,7 +185,9 @@ try:
         text=f"Peak: {peak_value2:.0f} U/L @{peak_time2:.1f}h",
         showarrow=True,
         arrowhead=1,
-        yshift=10
+        yshift=10,
+        ax=-70,
+        ay=-30
     )
     
 
