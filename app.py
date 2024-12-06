@@ -117,6 +117,10 @@ try:
         xaxis=dict(
             dtick=12,  # Set tick interval to 12 hours
             tick0=0    # Start ticks at 0
+        ),
+        yaxis=dict(
+            dtick=5000,  # Set tick interval to 5000 units
+            tick0=0      # Start ticks at 0
         )
     )
     st.plotly_chart(fig1)
@@ -198,6 +202,10 @@ try:
         xaxis=dict(
             dtick=12,  # Set tick interval to 12 hours
             tick0=0    # Start ticks at 0
+        ),
+        yaxis=dict(
+            dtick=5000,  # Set tick interval to 5000 units
+            tick0=0      # Start ticks at 0
         )
     )
     st.plotly_chart(fig2)
