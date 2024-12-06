@@ -72,9 +72,18 @@ try:
     peak_value1 = df_real1_sorted.loc[peak_idx1, 'Value (U/L)']
     
     # Add vertical lines for workouts
-    fig1.add_vline(x=0, line_dash="solid", line_color="red", annotation_text="First Workout")
+    fig1.add_vline(x=0, line_dash="solid", line_color="red")
     fig1.add_vline(x=(workout2_start - workout1_start).total_seconds()/3600, 
-                   line_dash="solid", line_color="blue", annotation_text="Second Workout")
+                   line_dash="solid", line_color="blue")
+    
+    # Add workout labels
+    fig1.add_annotation(x=0, y=max(df['Value (U/L)'])*0.2,
+                       text="Workout 1", showarrow=True,
+                       arrowhead=1, ax=-40)
+    fig1.add_annotation(x=(workout2_start - workout1_start).total_seconds()/3600,
+                       y=max(df['Value (U/L)'])*0.3,
+                       text="Workout 2", showarrow=True,
+                       arrowhead=1, ax=-40)
     
     # Add vertical line at peak
     fig1.add_vline(x=peak_time1, line_dash="dash", line_color="gray")
@@ -133,7 +142,12 @@ try:
     peak_value2 = df_real2_sorted.loc[peak_idx2, 'Value (U/L)']
     
     # Add vertical lines for workouts
-    fig2.add_vline(x=0, line_dash="solid", line_color="red", annotation_text="Second Workout")
+    fig2.add_vline(x=0, line_dash="solid", line_color="red")
+    
+    # Add workout label
+    fig2.add_annotation(x=0, y=max(df['Value (U/L)'])*0.2,
+                       text="Workout 2", showarrow=True,
+                       arrowhead=1, ax=-40)
     
     # Add vertical line at peak
     fig2.add_vline(x=peak_time2, line_dash="dash", line_color="gray")
