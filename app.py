@@ -71,6 +71,11 @@ try:
     peak_time1 = df_real1_sorted.loc[peak_idx1, 'Hours_Elapsed_Workout1']
     peak_value1 = df_real1_sorted.loc[peak_idx1, 'Value (U/L)']
     
+    # Add vertical lines for workouts
+    fig1.add_vline(x=0, line_dash="solid", line_color="red", annotation_text="First Workout")
+    fig1.add_vline(x=(workout2_start - workout1_start).total_seconds()/3600, 
+                   line_dash="solid", line_color="blue", annotation_text="Second Workout")
+    
     # Add vertical line at peak
     fig1.add_vline(x=peak_time1, line_dash="dash", line_color="gray")
     fig1.add_annotation(
@@ -126,6 +131,9 @@ try:
     peak_idx2 = df_real2_sorted['Value (U/L)'].idxmax()
     peak_time2 = df_real2_sorted.loc[peak_idx2, 'Hours_Elapsed_Workout2']
     peak_value2 = df_real2_sorted.loc[peak_idx2, 'Value (U/L)']
+    
+    # Add vertical lines for workouts
+    fig2.add_vline(x=0, line_dash="solid", line_color="red", annotation_text="Second Workout")
     
     # Add vertical line at peak
     fig2.add_vline(x=peak_time2, line_dash="dash", line_color="gray")
