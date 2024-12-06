@@ -117,7 +117,7 @@ try:
         layer="below", line_width=0
     )
     fig1.add_annotation(
-        x=0,
+        x=peak_time1/2,  # Center the label horizontally
         y=2500,
         text="Safe discharge zone",
         showarrow=False,
@@ -217,7 +217,7 @@ try:
         layer="below", line_width=0
     )
     fig2.add_annotation(
-        x=0,
+        x=peak_time2/2,  # Center the label horizontally
         y=2500,
         text="Safe discharge zone",
         showarrow=False,
