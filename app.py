@@ -36,7 +36,7 @@ try:
     Source: https://www.uptodate.com/contents/rhabdomyolysis-clinical-manifestations-and-diagnosis
     """)
     # Create plots for both workouts
-    st.subheader('Pull-up/Arm Workout Analysis')
+    st.subheader(f'CK levels post Workout 1 (Pull-up/Arm workout on {workout1_start.strftime("%m/%d/%y")})')
     df['Hours_Elapsed_Workout1'] = ((df['Date/Time'] - workout1_start).dt.total_seconds() / 3600).round(1)
     
     # Add t=0 point for first workout
