@@ -31,7 +31,7 @@ try:
     ---
     **Note on Creatine kinase (CK) Response:**  
     - Creatine kinase (CK) has a serum half-life of approximately 36 hours.  
-    - CK levels rise within 12 hours of muscle injury, peak in 24-36 hours, and decrease at a rate of 30-40% per day.
+    - CK levels rise within 12 hours of muscle injury, peak in 24-72 hours, and decrease at a rate of 30-40% per day.
                 
     Source: https://www.uptodate.com/contents/rhabdomyolysis-clinical-manifestations-and-diagnosis
     """)
