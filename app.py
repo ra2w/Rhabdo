@@ -162,6 +162,19 @@ try:
                        text="Workout 2", showarrow=True,
                        arrowhead=1, ax=-40)
     
+    # Add first CK test annotation
+    first_test_value = df.iloc[0]['Value (U/L)']
+    first_test_time = df.iloc[0]['Hours_Elapsed_Workout2']
+    fig2.add_annotation(
+        x=first_test_time,
+        y=first_test_value,
+        text="First CK Test",
+        showarrow=True,
+        arrowhead=1,
+        ax=-40,
+        ay=-40
+    )
+    
     # Add vertical line at peak
     fig2.add_vline(x=peak_time2, line_dash="dash", line_color="gray")
     fig2.add_annotation(
