@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 
 # Set page title
-st.title('CK Values Analysis')
+st.title('Exercise Induced Rhabdomyolysis')
 
 # Define the two workout start times
 workout1_start = pd.to_datetime('2024-11-26 10:00:00')  # Tuesday 10 AM
@@ -29,9 +29,9 @@ try:
     # Add footnote
     st.markdown("""
     ---
-    **Note on CK Response:**  
-    *"Following muscle injury, the serum CK begins to rise within 2 to 12 hours, reaches its maximum within 24 to 72 hours, 
-    and usually declines within three to five days."*
+    **Note on Creatine kinase (CK) Response:**  
+    - Creatine kinase (CK) has a serum half-life of approximately 36 hours.  
+    - CK levels rise within 12 hours of muscle injury, peak in 24-36 hours, and decrease at a rate of 30-40% per day.
                 
     Source: https://www.uptodate.com/contents/rhabdomyolysis-clinical-manifestations-and-diagnosis
     """)
@@ -81,17 +81,8 @@ try:
         arrowhead=1,
         yshift=10
     )
-    
-    # Add shaded normal range
-    fig1.add_hrect(y0=30, y1=145, 
-                   line_width=0, 
-                   fillcolor="gray", 
-                   opacity=0.2,
-                   annotation_text="Normal Range",
-                   annotation=dict(font_size=10))
-
     fig1.update_layout(
-        xaxis_title=f"Time elapsed since first workout (t=0 at {workout1_start.strftime('%I:%M%p %m/%d/%y')})",
+        xaxis_title=f"Time (hours) elapsed since first workout (t=0 at {workout1_start.strftime('%I:%M%p %m/%d/%y')})",
         yaxis_title="CK Value (U/L)",
         hovermode='x unified',
         xaxis=dict(
@@ -147,16 +138,9 @@ try:
         yshift=10
     )
     
-    # Add shaded normal range
-    fig2.add_hrect(y0=30, y1=145, 
-                   line_width=0, 
-                   fillcolor="gray", 
-                   opacity=0.2,
-                   annotation_text="Normal Range",
-                   annotation=dict(font_size=10))
 
     fig2.update_layout(
-        xaxis_title=f"Time elapsed since second workout (t=0 at {workout2_start.strftime('%I:%M%p %m/%d/%y')})",
+        xaxis_title=f"Time (hours) elapsed since second workout (t=0 at {workout2_start.strftime('%I:%M%p %m/%d/%y')})",
         yaxis_title="CK Value (U/L)",
         hovermode='x unified',
         xaxis=dict(
