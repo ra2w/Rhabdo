@@ -36,7 +36,7 @@ try:
     Source: https://www.uptodate.com/contents/rhabdomyolysis-clinical-manifestations-and-diagnosis
     """)
     # Create plots for both workouts
-    st.subheader(f'CK levels post Workout 1 (Pull-up/Arm workout on {workout1_start.strftime("%m/%d/%y")})')
+    st.write(f'### CK levels post Workout 1 (Pull-up/Arm workout on {workout1_start.strftime("%m/%d/%y")})')
     df['Hours_Elapsed_Workout1'] = ((df['Date/Time'] - workout1_start).dt.total_seconds() / 3600).round(1)
     
     # Add t=0 point for first workout
@@ -140,7 +140,7 @@ try:
     )
     st.plotly_chart(fig1)
 
-    st.subheader('Quad + HIIT Workout Analysis')
+    st.write('### CK levels post Workout 2 (Quad + HIIT workout on {workout2_start.strftime("%m/%d/%y")})')
     df['Hours_Elapsed_Workout2'] = ((df['Date/Time'] - workout2_start).dt.total_seconds() / 3600).round(1)
     
     # Add t=0 point for second workout
